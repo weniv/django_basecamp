@@ -1,0 +1,19 @@
+<h1>게시판</h1>
+
+<p>{{ object.title }}</p>
+<p>{{ object.contents }}</p>
+<p>{{ object.created_at }}</p>
+<p>{{ object.updated_at }}</p>
+<p>{{ object.id }}</p>
+{% if object.main_image %}
+<img src="{{ object.main_image.url }}" alt="">
+{% endif %}
+
+<!-- 삭제하기 버튼 -->
+<form action="{% url 'blog_delete' object.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">삭제하기</button>
+</form>
+<a href="{% url 'blog_update' object.id %}">수정</a>
+
+<a href="{% url 'blog_list' %}">뒤로가기</a>

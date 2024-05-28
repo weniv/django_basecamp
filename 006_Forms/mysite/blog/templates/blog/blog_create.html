@@ -1,0 +1,6 @@
+<p style="color:red;">{{ error }}</p>
+<form action="{% url 'blog_create'%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">저장</button>
+</form>

@@ -1,0 +1,11 @@
+<p>{{object.title}}</p>
+<p>{{object.contents}}</p>
+
+<!-- 로그인을 했고, 내가 이 글에 글쓴이라고 한다면 삭제와 업데이트 버튼 노출 -->
+{% if user.is_authenticated and user == object.author %}
+    <a href="{% url 'blog_update' object.pk %}">수정</a>
+    <form action="{% url 'blog_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="삭제">
+    </form>
+{% endif %}

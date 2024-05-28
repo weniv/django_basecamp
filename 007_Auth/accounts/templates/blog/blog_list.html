@@ -1,0 +1,6 @@
+
+<ul>
+    {% for blog in object_list %}
+    <li><a href="/blog/{{blog.id}}">{{blog.title}}</a></li>
+    {% endfor %}
+</ul>

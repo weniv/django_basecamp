@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog_list</title>
+</head>
+<body>
+    <h1>blog_list 페이지 입니다.</h1>
+    {# 주석 입니다! #}
+
+    {# {% '파이썬 문법 사용!' %} #}
+    {# {{ '파이썬 변수 사용!' }} #}
+
+    {# 다만 이런 식으로 실무에서 사용하지 않고, {% url 함수명 아규먼트 %} 형태로 사용합니다. #}
+    {# 지금은 쉽게 가르쳐 드리기 위해 이 방식을 사용하겠습니다. #}
+    <ul>
+        {% for blog in blog_list %}
+        <li><a href="/blog/{{blog.id}}">{{blog.title}}</a></li>
+        {% endfor %}
+    </ul>
+
+    {% for i in hello %}
+    <p>{{i}}</p>
+    {% endfor %}
+</body>
+</html>

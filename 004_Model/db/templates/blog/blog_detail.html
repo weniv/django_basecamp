@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>blog_detail</title>
+</head>
+<body>
+    <h1>blog_detail</h1>
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.content }}</p>
+    <p>{{ object.created_at }}</p>
+    <p>{{ object.updated_at }}</p>
+    {% if object.main_image %}
+        <img src="{{ object.main_image.url }}" alt="">
+    {% endif %}
+    <a href="{% url 'blog_list' %}">목록</a>
+</body>
+</html>
